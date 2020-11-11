@@ -23,7 +23,6 @@ function downloadAndParseGzJson () {
                 try {
                     const rawData = JSON.parse(Buffer.concat(chunkData));
                     res(rawData);
-                    // console.table(rawData.S[0].C[0].L[0].E);
                 } catch (e) {
                     console.error("finishErr");
                     res(null);
@@ -37,7 +36,7 @@ function downloadAndParseGzJson () {
                 }
             );
         } catch (e) {
-            console.error("downloadFeedData err => ", e);
+            console.error("download err => ", e);
             res(null);
         }
     })
